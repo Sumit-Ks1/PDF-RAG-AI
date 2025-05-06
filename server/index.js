@@ -17,6 +17,7 @@ const queue = new Queue("file-upload-queue", {
   connection: {
     host: `${process.env.VALKEY_HOST}`,
     port: `${process.env.VALKEY_PORT}`,
+    password: `${process.env.VALKEY_PASSWORD}`, 
 
   },
 });
@@ -69,6 +70,7 @@ app.get("/chat", async (req, res) => {
     embeddings,
     {
       url: `${process.env.QDRANT_URL}`,
+      
       checkCompatibility: false,
       collectionName: "PDF-RAG",
     }
