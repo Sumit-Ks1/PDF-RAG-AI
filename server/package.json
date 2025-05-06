@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "The backend part of my RAG project",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pm2 start pm2.config.cjs --watch",
+    "start": "pm2-runtime pm2.config.cjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/community": "^0.3.42",
+    "@langchain/core": "^0.3.51",
+    "@langchain/mistralai": "^0.2.0",
+    "@langchain/openai": "^0.5.10",
+    "@langchain/qdrant": "^0.1.2",
+    "@langchain/textsplitters": "^0.1.0",
+    "@mistralai/mistralai": "^1.6.0",
+    "bullmq": "^5.52.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "langchain": "^0.3.24",
+    "multer": "^1.4.5-lts.2",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.3",
+    "nodemon": "^3.1.10",
+    "pm2": "^6.0.5"
+  }
+}
