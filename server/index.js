@@ -10,21 +10,21 @@ import dotenv from "dotenv";
 dotenv.config()
 
 const mistral = new Mistral({
-    apiKey: `${process.env.MISTRAL_API_KEY}` ?? "",
+    apiKey: process.env.MISTRAL_API_KEY ?? "",
   });
 
 const queue = new Queue("file-upload-queue", {
   connection: {
-    host: `${process.env.VALKEY_HOST}`,
-    port: `${process.env.VALKEY_PORT}`,
-    password: `${process.env.VALKEY_PASSWORD}`, 
+    host: process.env.VALKEY_HOST,
+    port: process.env.VALKEY_PORT,
+    password: process.env.VALKEY_PASSWORD, 
 
   },
 });
 
 const app = express();
 app.use(cors({
-    origin: `${process.env.CLIENT_URL}`,
+    origin: process.env.CLIENT_URL,
 }));
 
 const storage = multer.diskStorage({
@@ -63,13 +63,13 @@ app.get("/chat", async (req, res) => {
 
   const embeddings = new MistralAIEmbeddings({
     model: "mistral-embed",
-    apiKey: `${process.env.MISTRAL_API_KEY}` ?? "",
+    apiKey: process.env.MISTRAL_API_KEY ?? "",
   });
 
   const vectorStore = await QdrantVectorStore.fromExistingCollection(
     embeddings,
     {
-      url: `${process.env.QDRANT_URL}`,
+      url: process.env.QDRANT_URL,
       
       checkCompatibility: false,
       collectionName: "PDF-RAG",

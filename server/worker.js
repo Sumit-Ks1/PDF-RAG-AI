@@ -15,12 +15,12 @@ const worker = new Worker(
 
     const embeddings = new MistralAIEmbeddings({
         model: "mistral-embed",
-        apiKey: `${process.env.MISTRAL_API_KEY}` ?? "",
+        apiKey: process.env.MISTRAL_API_KEY ?? "",
       });
     const vectorStore = await QdrantVectorStore.fromExistingCollection(
       embeddings,
       {
-        url: `${process.env.QDRANT_URL}`,
+        url: process.env.QDRANT_URL,
         checkCompatibility: false,
         collectionName: "PDF-RAG",
       }
@@ -30,9 +30,9 @@ const worker = new Worker(
   {
     concurrency: 100,
     connection: {
-      host: `${process.env.VALKEY_HOST}`,
-      port: `${process.env.VALKEY_PORT}`,
-      password: `${process.env.VALKEY_PASSWORD}`,
+      host: process.env.VALKEY_HOST,
+      port: process.env.VALKEY_PORT,
+      password: process.env.VALKEY_PASSWORD,
     },
   }
 );
