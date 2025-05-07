@@ -44,7 +44,7 @@ services:
       - NODE_ENV=production
       - VALKEY_HOST=valkey
       - VALKEY_PORT=6379
-      - QDRANT_URL=http://localhost:6333
+      - QDRANT_URL=http://qdrant:6333
       - CLIENT_URL=http://localhost:3000
     volumes:
       - ./server/uploads:/app/uploads

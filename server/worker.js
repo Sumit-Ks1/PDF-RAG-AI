@@ -33,6 +33,7 @@ const worker = new Worker(
       host: process.env.VALKEY_HOST,
       port: process.env.VALKEY_PORT,
       // password: process.env.VALKEY_PASSWORD,
+      checkCompatibility: false
     },
   }
 );

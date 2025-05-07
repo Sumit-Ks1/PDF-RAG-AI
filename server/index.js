@@ -18,7 +18,7 @@ const queue = new Queue("file-upload-queue", {
     host: process.env.VALKEY_HOST,
     port: process.env.VALKEY_PORT,
     // password: process.env.VALKEY_PASSWORD, 
-
+    checkCompatibility: false
   },
 });
 
