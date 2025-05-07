@@ -32,7 +32,7 @@ const worker = new Worker(
     connection: {
       host: process.env.VALKEY_HOST,
       port: process.env.VALKEY_PORT,
-      password: process.env.VALKEY_PASSWORD,
+      // password: process.env.VALKEY_PASSWORD,
     },
   }
 );
