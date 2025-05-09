@@ -1,7 +1,9 @@
-# PDF-RAG-AI: AI-Powered Document Question Answering
+# PDF-RAG-AI: AI-Powered Document Question Answering end to end encrypted without anyone interruption (not even mine)
 
 ![PDF-RAG-AI](https://img.shields.io/badge/PDF--RAG--AI-Document%20QA-blue)
 ![License](https://img.shields.io/badge/license-ISC-green)
+
+## We not store your pdf at our side. It is chunked for safety
 
 A modern web application that enables intelligent document analysis and question answering for PDF documents using RAG (Retrieval-Augmented Generation) technology.
 
